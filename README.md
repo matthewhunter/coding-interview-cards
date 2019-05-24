@@ -4,6 +4,13 @@ The goal of this fun side project is to learn, hone, and sharpen Matt's React sk
 
 The fist version will be simple question and answer cards, but hopefully we can scale it up with fun ideas!
 
+## Table of Contents
+
+- [Running the Project](#running-the-project)
+- [Changelog](#changelog)
+    - [Version 0.0.1](#version-0.0.1)
+    - [Version 0.5.1](#version-0.5.1)
+
 ## Running the Project
 
 You can clone this repo, move into the directory, install dependencies, and be able to run a script.  A `development.js` will be needed from either of us to run on a local development environment.  First time setup will be synced to a deployed "dev" database that Matt can learn with.
