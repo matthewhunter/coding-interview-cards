@@ -14,7 +14,7 @@ const serverConfig = {
 
 const clientConfig = {
     mode: process.env.NODE_ENV || 'development',
-    entry: './src/client/index.js',
+    entry: ['@babel/polyfill', './src/client/index.js'],
     devtool: 'inline-source-map',
     module: {
         rules: [
