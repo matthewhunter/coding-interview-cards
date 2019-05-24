@@ -21,6 +21,9 @@ app.use(helmet());
 // Serves static files from public folder
 app.use(express.static('public'));
 
+// Body Parser to intercept requests and add req.body
+app.use(express.json());
+
 // Useful logging tool for all incoming requests
 app.use(morgan('dev'));
 
