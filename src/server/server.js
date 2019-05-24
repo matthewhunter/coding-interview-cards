@@ -1,10 +1,13 @@
 import path from 'path';
 import express from 'express';
+import passport from 'passport';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import compression from 'compression';
 import routes from './routes';
+
+import './middleware/localstrategy';
 
 const app = express();
 
@@ -23,6 +26,9 @@ app.use(express.static('public'));
 
 // Body Parser to intercept requests and add req.body
 app.use(express.json());
+
+// Initialize Passport on our app
+app.use(passport.initialize());
 
 // Useful logging tool for all incoming requests
 app.use(morgan('dev'));
