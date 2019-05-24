@@ -1,10 +1,17 @@
 import { Router } from 'express';
+import passport from 'passport';
+import { CreateToken } from '../../utils/security/tokens';
 
 const router = Router();
 
-router.post('/', async (req, res) => {
+router.post('/', passport.authenticate('local'), async (req, res) => {
     try {
-        res.json('Testing Login Path')
+        let token = await CreateToken({ userid: req.user.id });
+        res.json({
+            token,
+            role: req.user.role,
+            userid: req.user.id
+        });
     } catch (error) {
         console.log(error)
     }
