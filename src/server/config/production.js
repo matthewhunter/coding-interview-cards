@@ -7,5 +7,8 @@ export default {
             password: process.env.KNEX_PASSWORD,
             database: process.env.KNEX_SCHEMA
         }
+    },
+    auth: {
+        secret: process.env.SECRET
     }
 }
