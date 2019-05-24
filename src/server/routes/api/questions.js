@@ -24,4 +24,40 @@ router.get('/:id?', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        // Assumes req.body has the correct properties
+        // Can adjust for sanitization later
+        let [resultId] = await Questions.addNew(req.body);
+        res.json(resultId);
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(500);
+    }
+});
+
+router.put('/:id', async (req, res) => {
+    let id = req.params.id;
+    try {
+        // Assumes req.body has the correct properties
+        // Can adjust for sanitization later
+        let result = await Questions.editOne(id, req.body.text);
+        res.json(result);
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(500);
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    let id = req.params.id;
+    try {
+        let result = await Questions.deleteOne(id);
+        res.json(result);
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(500);
+    }
+});
+
 export default router;
