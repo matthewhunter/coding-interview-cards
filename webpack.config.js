@@ -9,7 +9,7 @@ const serverConfig = {
         path: path.resolve(__dirname, 'dist')
     },
     target: 'node',
-    externals: [nodeExternals()],
+    externals: [nodeExternals(), { knex: 'commonjs knex' }],
 }
 
 const clientConfig = {
