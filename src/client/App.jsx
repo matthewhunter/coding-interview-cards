@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 const App = () => {
 
@@ -17,8 +18,13 @@ const App = () => {
     }, [])
 
     return (
-        <h1 style={{ padding: '5em', color: '#0091ea' }}>Hello {world}!</h1>
+        <Header>Hello {world}!</Header>
     );
 }
+
+const Header = styled.h1`
+    padding: 5em;
+    color: #0091ea
+`
 
 export default App;
