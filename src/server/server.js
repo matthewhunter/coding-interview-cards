@@ -26,10 +26,10 @@ app.use(morgan('dev'));
 
 app.use(routes);
 
-// This will catch any url bar route that's not accounted for
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+// This will catch any url bar route that's not accounted for in routes
+app.use('*', (req, res) => {
+    res.sendFile(path.resolve('./public/index.html'));
 });
 
 let port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`\x1b[4mServer listening on port ${port}!`));
+app.listen(port, () => console.log(`Server listening on port ${port}!\n`));
