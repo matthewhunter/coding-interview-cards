@@ -19,6 +19,7 @@ passport.use(new LocalStrategy.Strategy({
             delete user.password;
             done(null, user);
         } else {
+            // unauthorized!!
             done(null, false);
         }
     } catch (error) {

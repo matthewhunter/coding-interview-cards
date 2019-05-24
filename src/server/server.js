@@ -8,6 +8,7 @@ import compression from 'compression';
 import routes from './routes';
 
 import './middleware/localstrategy';
+import './middleware/bearerstrategy';
 
 const app = express();
 

@@ -3,6 +3,16 @@ import Questions from '../../db/queries/questions';
 
 const router = Router();
 
+// Endpoint Middleware:
+// Checks if incoming request has the correct user object
+const isAdmin = (req, res, next) => {
+    if(!req.user || req.user.role !== 'guest') {
+        return res.sendStatus(401);
+    } else {
+        return next();
+    }
+}
+
 router.get('/:id?', async (req, res) => {
     let id = req.params.id;
     if (id) {
@@ -24,7 +34,7 @@ router.get('/:id?', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', isAdmin, async (req, res) => {
     try {
         // Assumes req.body has the correct properties
         // Can adjust for sanitization later
@@ -36,7 +46,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', isAdmin, async (req, res) => {
     let id = req.params.id;
     try {
         // Assumes req.body has the correct properties
@@ -49,7 +59,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isAdmin, async (req, res) => {
     let id = req.params.id;
     try {
         let result = await Questions.deleteOne(id);
