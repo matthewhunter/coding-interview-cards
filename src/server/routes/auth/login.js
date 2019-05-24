@@ -13,7 +13,8 @@ router.post('/', passport.authenticate('local'), async (req, res) => {
             userid: req.user.id
         });
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.sendStatus(500);
     }
 });
 
