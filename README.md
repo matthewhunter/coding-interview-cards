@@ -26,12 +26,12 @@ npm run start
 #### Version 0.0.1
 
 Basic project setup
-    * basic dependencies installed
-    * dev and build scripts for the project included
-    * webpack set up (aaarrrgghhhh)
-    * client folder with basic React app
-    * server folder with Express server running
-        * common middlware on the server
-        * db connection with knex
-        * config for production/dev environments
-        * routes for REST API
+* basic dependencies installed
+* dev and build scripts for the project included
+* webpack set up (aaarrrgghhhh)
+* client folder with basic React app
+* server folder with Express server running
+    * common middlware on the server
+    * db connection with knex
+    * config for production/dev environments
+    * routes for REST API
