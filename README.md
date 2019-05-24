@@ -35,3 +35,19 @@ Basic project setup
     * db connection with knex
     * config for production/dev environments
     * routes for REST API
+
+### Version 0.5.1
+
+Authentication Added
+* passport implemented
+* bearer strategy implemented
+    * router/endpoint middleware added
+* local strategy implemented
+    * allows users to login with email/password
+* password utility with bcrypt
+    * take a plaintext password and return a salted hash
+    * can compare a given password to the hash
+* tokens utility added
+    * can create signed json web token payloads
+    * can validate given tokens from bearer strategy
+* login/register routes working!
