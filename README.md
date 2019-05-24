@@ -8,8 +8,8 @@ The fist version will be simple question and answer cards, but hopefully we can 
 
 - [Running the Project](#running-the-project)
 - [Changelog](#changelog)
-    - [Version 0.0.1](#version-0.0.1)
-    - [Version 0.5.1](#version-0.5.1)
+    - [Version 0.0.1](#version-001)
+    - [Version 0.5.1](#version-051)
 
 ## Running the Project
 
@@ -43,7 +43,7 @@ Basic project setup
     * config for production/dev environments
     * routes for REST API
 
-### Version 0.5.1
+#### Version 0.5.1
 
 Authentication Added
 * passport implemented
