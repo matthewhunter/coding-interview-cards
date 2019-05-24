@@ -7,6 +7,7 @@ The fist version will be simple question and answer cards, but hopefully we can 
 ## Running the Project
 
 You can clone this repo, move into the directory, install dependencies, and be able to run a script.  A `development.js` will be needed from either of us to run on a local development environment.  First time setup will be synced to a deployed "dev" database that Matt can learn with.
+
 Local Development:
 ```bash
 git clone https://github.com/matthewhunter/coding-interview-cards.git
