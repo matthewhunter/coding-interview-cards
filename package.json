@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "a javascript quiz game for students",
   "main": "dist/server.js",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  },
   "scripts": {
     "watch:build": "npx webpack -w",
     "watch:server": "nodemon dist/server.js",
@@ -40,6 +34,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
