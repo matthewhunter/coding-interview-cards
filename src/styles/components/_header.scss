@@ -1,0 +1,12 @@
+.header {
+  background: white;
+  margin: $m-size;
+}
+
+.header__title {
+  color: darken($blue, 10%);
+  padding: $m-size;
+  margin: 0;
+  font-size: $l-size;
+  border-bottom: 1rem solid darken($blue, 10%);
+}
