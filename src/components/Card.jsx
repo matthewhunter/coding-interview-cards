@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Card = props => (
-  <div className='card-container'>
-    <div className='card-front'></div>
-    <div className='card-back'></div>
+  <div className='card' style={props.cardStyle}>
+    <div className='card-back' />
+    <div className='card-front' style={props.frontStyle}/>
   </div>
 )
 
