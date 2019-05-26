@@ -1,12 +1,17 @@
 .header {
-  background: white;
-  margin: $m-size;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .header__title {
-  color: darken($blue, 10%);
+  color: white;
+  background: darken($blue, 10%);
   padding: $m-size;
-  margin: 0;
+  margin: 1rem 1rem 0;
   font-size: $l-size;
-  border-bottom: 1rem solid darken($blue, 10%);
+  border-bottom: 1rem solid darken($blue, 20%);
+  text-align: center;
+  display: inline-block;
 }
