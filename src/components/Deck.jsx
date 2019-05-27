@@ -15,7 +15,7 @@ const Deck = props => (
         display: 'none'
       }
       bottom = bottom + 1
-      return <Card key={card} cardStyle={cardStyle()} frontStyle={frontStyle} />
+      return <Card key={card} index={card} cards={props.cards.length} cardStyle={cardStyle()} frontStyle={frontStyle} bottom={bottom} />
     })}
   </React.Fragment>
 )
