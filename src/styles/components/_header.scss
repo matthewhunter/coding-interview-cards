@@ -1,6 +1,8 @@
 .header {
   margin: 0 auto;
   display: flex;
+  position: relative;
+  z-index: 100;
   flex-direction: row;
   justify-content: center;
 }
@@ -9,7 +11,7 @@
   color: white;
   background: darken($blue, 10%);
   padding: $m-size;
-  margin: 1rem 1rem 0;
+  margin: 1rem 1rem 2rem;
   font-size: $l-size;
   border-bottom: .5rem solid darken($blue, 20%);
   text-align: center;

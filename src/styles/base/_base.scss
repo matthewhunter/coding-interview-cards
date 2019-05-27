@@ -1,7 +1,10 @@
 html {
   font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
 }
 body {
   font-family: Helvetica, Arial, sans-serif;
   background: $blue;
+  height: 100%;
 }
