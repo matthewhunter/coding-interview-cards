@@ -6,13 +6,16 @@ import cards from '../cards.js'
 
 export default class App extends React.Component {
   state = {
-    // just temporary values so I have something to iterate
-    cards: cards,
+    cards: [],
     currentCard: [],
     playedCards: []
   }
-  selectCard ( card ) {
-    console.log(card)
+  selectCard = (selectedCard) => {
+    this.state.currentCard.push(this.state.cards.pop())
+    console.log( this.state.currentCard )
+    this.setState( prevState => {this.state.cards.filter(card => card !== selectedCard)
+    }  )
+    console.log(this.state.cards)
   }
   render() {
     const title = 'Coding Review Cards'
