@@ -8,3 +8,11 @@ body {
   background: $blue;
   height: 100%;
 }
+#root {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
