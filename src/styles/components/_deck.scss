@@ -1,0 +1,43 @@
+.draw, .playing, .discard {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid darken($blue, 10%);
+  background:darken($blue, 5%);
+  position: absolute;
+  top: 50%;
+}
+
+.draw {
+  
+  margin: -13.75vw 0 0 4vw;
+  height: 27.5vw;
+  width: 21vw;
+  border-radius: 1.6vw;
+  left: 0;
+}
+
+.playing {
+  margin: -27.5vw 0 0 -21vw;
+  height: 55vw;
+  width: 42vw;
+  border-radius: 3.2vw;
+  left: 50%;
+}
+
+.discard {
+  margin: -13.75vw 4vw 0 0;
+  height: 27.5vw;
+  width: 21vw;
+  border-radius: 1.6vw;
+  right: 0;
+}
+
+.draw > p, .discard > p, .playing > p {
+  position: relative;
+  top: -4vw;
+  font-size: 1.5vw;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  color: darken($blue, 10%);
+}
