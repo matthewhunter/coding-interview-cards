@@ -22,24 +22,35 @@ randomize(cards)
 
 const Board = props => (
   <React.Fragment>
-  <div className='board'>
-    <div className='draw'>
-      <p></p>
+    <div className='board'>
+      <div className='draw'>
+        <p />
+      </div>
+      <div className='playing'>
+        <p />
+      </div>
+      <div className='discard'>
+        <p />
+      </div>
     </div>
-    <div className='playing'>
-      <p></p>
+    <div className='cards'>
+      <div className='draw'>
+        <p />
+      </div>
+      <div className='playing'>
+        <p />
+      </div>
+      <div className='discard'>
+        <p />
+      </div>
     </div>
-    <div className='discard'>
-      <p></p>
-    </div>
-  </div>
-  <div className='cards'>
+    {/* <div className='cards'>
       {
         cards.map( (card, index) => {
         bottom = bottom + 0.5
         return <Card key={card.key} index={index} unplayedCards={props.unplayedCards} card={card} bottom={bottom} selectCard={props.selectCard} />
       })}
-  </div>
+  </div> */}
   </React.Fragment>
 )
 

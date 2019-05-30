@@ -1,4 +1,4 @@
-.board {
+div.board {
   position: absolute;
   display: flex;
   align-content: center;
@@ -8,7 +8,7 @@
   max-width: 120vh;
   max-height: 100vw;
 }
-.draw, .playing, .discard {
+div.board div.draw, div.board div.playing, div.board div.discard {
   border: 1px solid darken($blue, 10%);
   border-radius: 1.6vw;
   background:darken($blue, 5%);
@@ -16,19 +16,19 @@
   width: 100%;
 }
 
-.draw, .discard {
+div.board div.draw, div.board div.discard {
   flex: 1 1 25%;
   padding: 14% 0;
   margin: 0 5%;
 }
 
-.playing {
+div.board div.playing {
   flex: 1 1 50%;
   padding: 28% 0;
   margin: 0;
 }
 
-.draw > p, .discard > p, .playing > p {
+div.board div.draw > p, div.board div.discard > p, div.board div.playing > p {
   height: 100%;
   padding: 0;
   margin: 0;

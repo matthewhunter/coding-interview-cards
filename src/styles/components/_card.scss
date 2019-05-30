@@ -1,4 +1,40 @@
+div.cards {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 120vh;
+  max-height: 100vw;
+}
+div.cards div.draw, div.cards div.playing, div.cards div.discard {
+  border: 1px solid darken($yellow, 10%);
+  border-radius: 1.6vw;
+  background:darken($yellow, 5%);
+  position: relative;
+  width: 100%;
+}
 
+div.cards div.draw, div.cards div.discard {
+  flex: 1 1 25%;
+  padding: 14% 0;
+  margin: 0 5%;
+}
+
+div.cards div.playing {
+  flex: 1 1 50%;
+  padding: 28% 0;
+  margin: 0;
+}
+
+div.cards div.draw > p, div.cards div.discard > p, div.cards div.playing > p {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+////////
 
 .card-container {
   width: 16.1538461538vw;
