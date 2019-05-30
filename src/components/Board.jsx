@@ -2,9 +2,7 @@ import React from 'react'
 import cards from '../cards.js'
 import Card from './Card'
 
-let bottom = 0.5
-
-const randomize = (array) => {
+const randomize = array => {
   var index = array.length
   var temporary
   var random
@@ -34,23 +32,12 @@ const Board = props => (
       </div>
     </div>
     <div className='cards'>
-      <div className='draw'>
-        <p />
-      </div>
-      <div className='playing'>
-        <p />
-      </div>
-      <div className='discard'>
-        <p />
+      <div className='draw' id='draw'>
+        {cards.map((card, index) => {
+          return <Card key={card.id} index={index} unplayedCards={props.unplayedCards} currentCard={props.currentCard} playedCards={props.playedCards} card={card} selectCard={props.selectCard} />
+        })}
       </div>
     </div>
-    {/* <div className='cards'>
-      {
-        cards.map( (card, index) => {
-        bottom = bottom + 0.5
-        return <Card key={card.key} index={index} unplayedCards={props.unplayedCards} card={card} bottom={bottom} selectCard={props.selectCard} />
-      })}
-  </div> */}
   </React.Fragment>
 )
 

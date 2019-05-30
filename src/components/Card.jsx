@@ -4,13 +4,11 @@ export default class Card extends React.Component {
   state = {
     containerClasses: 'card-container',
     cardClasses: 'card',
+    position: 'draw',
     style: {
-      transform: `rotate(${Math.random() * 20 - 10}deg)`,
-      bottom: `${this.props.index}vw`
+      transform: `rotate(${Math.random() * 20 - 10}deg)`
     }
   }
-
-  rotation = Math.random() * 20 - 10
 
   componentDidMount() {
     this.props.unplayedCards.push(this)
@@ -43,17 +41,26 @@ export default class Card extends React.Component {
   }
 
   onClick = e => {
-    // console.log(this.props.index, this.props.unplayedCards.length - 1)
-    if (this.props.index !== this.props.unplayedCards.length - 1) {
-      return
+    // if (this.props.index !== this.props.unplayedCards.length - 1) {
+    //   return
+    // }
+    console.log(this.props.index)
+    if ( this.state.position === 'draw' ) {
+      this.props.selectCard(this)
+      this.setState( () => ( {
+        position: 'playing',
+        cardClasses: 'card is-flipped',
+        containerClasses: 'card-container is-flipped'
+      }))
     }
-    this.props.selectCard(this)
-    console.log(this.props.unplayedCards)
-    this.setState(() => ({
-      
-      cardClasses: 'card is-flipped',
-      containerClasses: 'card-container is-flipped'
-    }))
+    if (this.state.position === 'playing') {
+      this.props.selectCard(this)
+      this.setState(() => ({
+        position: 'discard',
+        cardClasses: 'card discard',
+        containerClasses: 'card-container discard'
+      }))
+    }
   }
 
   render() {
