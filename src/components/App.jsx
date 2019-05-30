@@ -1,29 +1,27 @@
 import React from 'react'
 import Header from './Header'
-import Deck from './Deck'
-import cards from '../cards.js'
+import Board from './Board'
+import cards from '../cards'
 
 export default class App extends React.Component {
   state = {
-    cards: [],
+    title: 'Coding Review Cards',
+    unplayedCards: [],
     currentCard: [],
     playedCards: []
   }
-  selectCard = ( selectedCard ) => {
-    this.state.currentCard.push(this.state.cards.pop())
-    console.log( this.state.currentCard )
-    this.setState( prevState => {this.state.cards.filter(card => card !== selectedCard)
-    }  )
-    console.log(this.state.cards)
+  selectCard = selectedCard => {
+    this.state.currentCard.push(this.state.unplayedCards.pop())
+    this.setState(prevState => {
+      this.state.unplayedCards.filter(card => card !== selectedCard)
+    } )
+    console.log(`Cards: ${this.state.unplayedCards.length}, currentCard: ${this.state.currentCard.length}, playedCards: ${this.state.playedCards.length}`)
   }
   render() {
-    const title = 'Coding Review Cards'
-
     return (
       <React.Fragment>
-        {/* <Header title={title} /> */}
-          <Deck cards={this.state.cards} selectCard={this.selectCard} />
-
+        {/* <Header title={this.state.title}/> */}
+        <Board unplayedCards={this.state.unplayedCards} selectCard={this.selectCard} />
       </React.Fragment>
     )
   }

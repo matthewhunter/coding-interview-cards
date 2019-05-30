@@ -1,0 +1,35 @@
+.board {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 120vh;
+  max-height: 100vw;
+}
+.draw, .playing, .discard {
+  border: 1px solid darken($blue, 10%);
+  border-radius: 1.6vw;
+  background:darken($blue, 5%);
+  position: relative;
+  width: 100%;
+}
+
+.draw, .discard {
+  flex: 1 1 25%;
+  padding: 14% 0;
+  margin: 0 5%;
+}
+
+.playing {
+  flex: 1 1 50%;
+  padding: 28% 0;
+  margin: 0;
+}
+
+.draw > p, .discard > p, .playing > p {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}

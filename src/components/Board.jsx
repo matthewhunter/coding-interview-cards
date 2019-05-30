@@ -20,25 +20,27 @@ const randomize = (array) => {
 
 randomize(cards)
 
-const Deck = props => (
+const Board = props => (
   <React.Fragment>
+  <div className='board'>
     <div className='draw'>
-      <p>Draw Pile</p>
+      <p></p>
     </div>
     <div className='playing'>
-      <p>Playing</p>
+      <p></p>
     </div>
     <div className='discard'>
-      <p>Discard Pile</p>
+      <p></p>
     </div>
-    <div className='cards'>
+  </div>
+  <div className='cards'>
       {
         cards.map( (card, index) => {
         bottom = bottom + 0.5
-        return <Card key={card.key} index={index} cards={props.cards} card={card} bottom={bottom} selectCard={props.selectCard} />
+        return <Card key={card.key} index={index} unplayedCards={props.unplayedCards} card={card} bottom={bottom} selectCard={props.selectCard} />
       })}
-    </div>
+  </div>
   </React.Fragment>
 )
 
-export default Deck
+export default Board

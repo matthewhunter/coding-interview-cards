@@ -1,3 +1,5 @@
+
+
 .card-container {
   width: 16.1538461538vw;
   height: 22.6153846154vw;
@@ -5,7 +7,8 @@
   top: 50%;
   margin: -11.3076923077vw 0 0 6.4615384615vw;
   position: absolute;
-  z-index: 100;
+  transition: all .5s;
+  transform-style: preserve-3d;
 }
 
 .card {
@@ -18,7 +21,14 @@
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg) scale(2) translateX(-17.75vw) rotate(0deg);
+  transform: rotateY(180deg);
+}
+
+.card-container.is-flipped {
+  width: 32.3076923076vw;
+  height: 45.2307692308vw;
+  left: 27vw;
+  top: 25%;
 }
 
 .card-face {
