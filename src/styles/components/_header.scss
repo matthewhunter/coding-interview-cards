@@ -1,7 +1,8 @@
 .header {
   margin: 0 auto;
   display: flex;
-  position: relative;
+   position: fixed;
+  top: 0;
   z-index: 100;
   flex-direction: row;
   justify-content: center;
@@ -15,5 +16,6 @@
   font-size: $l-size;
   border-bottom: .5rem solid darken($blue, 20%);
   text-align: center;
+ 
   display: inline-block;
 }

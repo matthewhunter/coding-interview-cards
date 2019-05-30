@@ -8,44 +8,29 @@ div.cards {
   max-width: 120vh;
   max-height: 100vw;
 }
-div.cards div.draw, div.cards div.playing, div.cards div.discard {
-  border: 1px solid darken($yellow, 10%);
+div.cards div.draw {
+  // border: 1px solid darken($yellow, 10%);
   border-radius: 1.6vw;
-  background:darken($yellow, 5%);
   position: relative;
   width: 100%;
-}
-
-div.cards div.draw, div.cards div.discard {
   flex: 1 1 25%;
   padding: 14% 0;
   margin: 0 5%;
 }
 
-div.cards div.playing {
-  flex: 1 1 50%;
-  padding: 28% 0;
-  margin: 0;
-}
-
-div.cards div.draw > p, div.cards div.discard > p, div.cards div.playing > p {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-////////
-
 .card-container {
-  width: 16.1538461538vw;
-  height: 22.6153846154vw;
-  left: 0;
-  top: 50%;
-  margin: -11.3076923077vw 0 0 6.4615384615vw;
+  height: 93%;
+  width: 20%;
+  margin: 5% 0;
+  padding: 0;
+  top: -12%;
+  left: 1%;
   position: absolute;
   transition: all .5s;
   transform-style: preserve-3d;
 }
+
+////////
 
 .card {
   width: 100%;
@@ -61,10 +46,22 @@ div.cards div.draw > p, div.cards div.discard > p, div.cards div.playing > p {
 }
 
 .card-container.is-flipped {
-  width: 32.3076923076vw;
-  height: 45.2307692308vw;
-  left: 27vw;
-  top: 25%;
+  height: 190%;
+  width: 40%;
+  left: 30%;
+  top: -60%;
+}
+
+.card-container.discard {
+  height: 93%;
+  width: 20%;
+  left: 79%;
+  top: -12%;
+  cursor: auto;
+}
+
+.card.discard {
+  cursor: auto;
 }
 
 .card-face {
@@ -73,9 +70,10 @@ div.cards div.draw > p, div.cards div.discard > p, div.cards div.playing > p {
   height: 100%;
   color: white;
   font-weight: bold;
-  font-size: 1.5vw;
+  font-size: 3rem;
   backface-visibility: hidden;
   overflow-wrap: break-word;
+  overflow: scroll;
 }
 
 .card-face > p {
