@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './Header'
 import Board from './Board'
-import cards from '../cards'
 
 export default class App extends React.Component {
   state = {
@@ -20,8 +19,8 @@ export default class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Header title={this.state.title}/> */}
-        <Board unplayedCards={this.state.unplayedCards} selectCard={this.selectCard} />
+        <Header title={this.state.title}/>
+        <Board unplayedCards={this.state.unplayedCards} currentCard={this.state.currentCard} playedCards={this.state.playedCards} selectCard={this.selectCard} />
       </React.Fragment>
     )
   }
