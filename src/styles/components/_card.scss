@@ -8,8 +8,8 @@ div.cards {
   max-width: 120vh;
   max-height: 100vw;
 }
+
 div.cards div.draw {
-  // border: 1px solid darken($yellow, 10%);
   border-radius: 1.6vw;
   position: relative;
   width: 100%;
@@ -37,12 +37,13 @@ div.cards div.draw {
   height: 100%;
   transition: transform .5s;
   transform-style: preserve-3d;
-  cursor: pointer;
   position: absolute;
 }
 
 .card.is-flipped {
   transform: rotateY(180deg);
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 .card-container.is-flipped {
@@ -69,8 +70,6 @@ div.cards div.draw {
   width: 100%;
   height: 100%;
   color: white;
-  font-weight: bold;
-  font-size: 3rem;
   backface-visibility: hidden;
   overflow-wrap: break-word;
   overflow: scroll;
@@ -86,9 +85,18 @@ div.cards div.draw {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 1vw;
-  -webkit-box-shadow: 0px 0px .5vw 0px darken($blue, 15%);
-  -moz-box-shadow: 0px 0px .5vw 0px darken($blue, 15%);
-  box-shadow: 0px 0px .5vw 0px darken($blue, 15%);
+  -webkit-box-shadow: 0px 0px .5vw 0px darken($blue, 10%);
+  -moz-box-shadow: 0px 0px .5vw 0px darken($blue, 10%);
+  box-shadow: 0px 0px .5vw 0px darken($blue, 10%);
+  backface-visibility: hidden;
+}
+
+.card.discard > .card-back {
+  background-color: lighten($yellow, 0%);
+  -webkit-box-shadow: 0px 0px .5vw 0px darken($yellow, 25%);
+  -moz-box-shadow: 0px 0px .5vw 0px darken($yellow, 25%);
+  box-shadow: 0px 0px .5vw 0px darken($yellow, 25%);
+  backface-visibility: hidden;
 }
 
 .card-front {
@@ -98,8 +106,11 @@ div.cards div.draw {
   -moz-box-shadow: 0px 0px .5vw 0px darken($blue, 10%);
   box-shadow: 0px 0px .5vw 0px darken($blue, 10%);
   transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .lift {
+  cursor: pointer;
   transform: scale(1.1);
+  backface-visibility: hidden;
 }

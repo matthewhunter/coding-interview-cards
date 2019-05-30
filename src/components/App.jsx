@@ -10,11 +10,13 @@ export default class App extends React.Component {
     playedCards: []
   }
   selectCard = selectedCard => {
-    this.state.currentCard.push(this.state.unplayedCards.pop())
-    this.setState(prevState => {
-      this.state.unplayedCards.filter(card => card !== selectedCard)
-    } )
-    console.log(`Cards: ${this.state.unplayedCards.length}, currentCard: ${this.state.currentCard.length}, playedCards: ${this.state.playedCards.length}`)
+    if ( selectedCard.state.position === 'draw') {
+      this.state.currentCard.push(this.state.unplayedCards.pop())
+    }
+    if (selectedCard.state.position === 'playing') {
+      this.state.playedCards.push(this.state.currentCard.pop())
+    }
+    console.log(`Unplayed Cards: ${this.state.unplayedCards.length}, Current Cards: ${this.state.currentCard.length}, Played Cards: ${this.state.playedCards.length}`)
   }
   render() {
     return (

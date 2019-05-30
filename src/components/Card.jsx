@@ -6,7 +6,7 @@ export default class Card extends React.Component {
     cardClasses: 'card',
     position: 'draw',
     style: {
-      transform: `rotate(${Math.random() * 20 - 10}deg)`
+      transform: `rotate(${ Math.random() * 20 - 10 }deg)`
     }
   }
 
@@ -15,20 +15,23 @@ export default class Card extends React.Component {
   }
 
   onMouseOver = () => {
-    if (this.props.index !== this.props.unplayedCards.length - 1) {
-      return
+    if (this.props.index === this.props.unplayedCards.length - 1 && this.props.currentCard.length === 0) {
+      this.setState(() => ({
+        cardClasses: 'card lift',
+        containerClasses: 'card-container lift'
+      }))
     }
-    this.setState(() => ({
-      // style: {
-      //   transform: 'unset'
-      // },
-      cardClasses: 'card lift',
-      containerClasses: 'card-container lift'
-    }))
+    if (this.state.position === 'playing') {
+      this.setState(() => ({
+        cardClasses: 'card is-flipped lift',
+        containerClasses: 'card-container is-flipped lift'
+      }))
+    }
+    
   }
 
   onMouseLeave = () => {
-    if (this.props.index !== this.props.unplayedCards.length - 1) {
+    if (this.props.index !== this.props.unplayedCards.length - 1 || this.props.currentCard.length !== 0) {
       return
     }
     this.setState(() => ({
@@ -41,20 +44,16 @@ export default class Card extends React.Component {
   }
 
   onClick = e => {
-    // if (this.props.index !== this.props.unplayedCards.length - 1) {
-    //   return
-    // }
-    console.log(this.props.index)
-    if ( this.state.position === 'draw' ) {
-      this.props.selectCard(this)
-      this.setState( () => ( {
+    if (this.state.position === 'draw' && this.props.currentCard.length === 0) {
+      this.props.selectCard(this, 'playing')
+      this.setState(() => ({
         position: 'playing',
         cardClasses: 'card is-flipped',
         containerClasses: 'card-container is-flipped'
       }))
     }
     if (this.state.position === 'playing') {
-      this.props.selectCard(this)
+      this.props.selectCard(this, 'discard')
       this.setState(() => ({
         position: 'discard',
         cardClasses: 'card discard',
@@ -76,7 +75,7 @@ export default class Card extends React.Component {
         <div className={this.state.cardClasses}>
           <div className='card-face card-back' />
           <div className='card-face card-front'>
-            <p>{this.props.card.challenge}</p>
+            <p>{ this.props.card.challenge }</p>
           </div>
         </div>
       </div>
