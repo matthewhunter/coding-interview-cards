@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { isAdmin } from '../../utils/security/isAdmin';
-import Questions from '../../db/queries/questions';
+import Categories from '../../db/queries/categories';
 
 const router = Router();
 
@@ -8,16 +8,16 @@ router.get('/:id?', async (req, res) => {
     let id = req.params.id;
     if (id) {
         try {
-            let [question] = await Questions.getOne(id);
-            res.json(question);
+            let [category] = await Categories.getOne(id);
+            res.json(category);
         } catch (error) {
             console.log(error);
             res.sendStatus(500);
         }
     } else {
         try {
-            let questions = await Questions.getAll();
-            res.json(questions);
+            let categories = await Categories.getAll();
+            res.json(categories);
         } catch (error) {
             console.log(error);
             res.sendStatus(500);
@@ -27,9 +27,7 @@ router.get('/:id?', async (req, res) => {
 
 router.post('/', isAdmin, async (req, res) => {
     try {
-        // Assumes req.body has the correct properties
-        // Can adjust for sanitization later
-        let [resultId] = await Questions.addNew(req.body);
+        let [resultId] = await Categories.addNew(req.body);
         res.json(resultId);
     } catch (error) {
         console.log(error);
@@ -40,9 +38,7 @@ router.post('/', isAdmin, async (req, res) => {
 router.put('/:id', isAdmin, async (req, res) => {
     let id = req.params.id;
     try {
-        // Assumes req.body has the correct properties
-        // Can adjust for sanitization later
-        let result = await Questions.editOne(id, req.body);
+        let result = await Categories.editOne(id, req.body);
         res.json(result);
     } catch (error) {
         console.log(error);
@@ -53,7 +49,7 @@ router.put('/:id', isAdmin, async (req, res) => {
 router.delete('/:id', isAdmin, async (req, res) => {
     let id = req.params.id;
     try {
-        let result = await Questions.deleteOne(id);
+        let result = await Categories.deleteOne(id);
         res.json(result);
     } catch (error) {
         console.log(error);

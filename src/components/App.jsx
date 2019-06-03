@@ -20,10 +20,10 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <>
         {/* <Header title={this.state.title}/> */}
         <Board unplayedCards={this.state.unplayedCards} currentCard={this.state.currentCard} playedCards={this.state.playedCards} selectCard={this.selectCard} />
-      </React.Fragment>
+      </>
     )
   }
 }
